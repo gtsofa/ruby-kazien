@@ -1,6 +1,7 @@
 def ask(question)
     print question
-    gets
+    # chomp removes new line \n
+    gets.chomp
 end
 verbo = ask("Please enter a verb: ")
 nouno = ask("Please enter a noun: ")
