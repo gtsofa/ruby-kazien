@@ -22,11 +22,19 @@ end
 
 puts "Welcome to the widget store!"
 quantity = ask("How many quantity of widgets are you ordering?")
-if quantity >= 50 && quantity < 100
-    total_cost = quantity * 9
-elsif quantity >= 100
+# if quantity >= 50 && quantity < 100
+#     total_cost = quantity * 9
+# elsif quantity >= 100
+#     total_cost = quantity * 8
+# else
+#     total_cost = quantity * 10
+# end
+if quantity >= 100
     total_cost = quantity * 8
+elsif quantity >= 50
+    total_cost = quantity * 9
 else
     total_cost = quantity * 10
 end
+
 puts "You entered #{quantity} widgets! and your total cost is #{total_cost} "
