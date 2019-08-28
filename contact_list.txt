@@ -1,0 +1,3 @@
+Writing a simple contact list program.
+Enter the contact list
+save contact in contact_list
