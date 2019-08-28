@@ -1,0 +1,19 @@
+Requirements
+- Given a list of student grades, calculate their GPA.
+- The grading scale used should be 1 to 4.
+- If any grade is not a 1, 2, 3, or 4, print a message and stop the program.
+#end
+Retrieve student_grades
+set grades to student_grades
+set grade_total to 0
+for each grade in grades collection
+    if grade is not a 1, 2, 3, or 4
+        print "invalid grade"
+        print grade
+        print "can't complete calculation"
+        stop
+    else add grade to grade_total
+    endif
+endfor
+set gpa to grade_total / number of grades
+print gpa

@@ -1,0 +1,21 @@
+Requirements.
+- Get two integer values from a user and output the sum of those numbers.
+Steps.
+prompt a user for a number
+if input is not a number
+    print "input is not a number"
+    prompt user for new number
+endif
+
+set num1 to user_input
+
+prompt user for a number 
+if input is not a number
+    print "input is not a number"
+    prompt user for new number
+endif
+
+set num2 to user_input
+
+set sum to num1 + num2
+print sum

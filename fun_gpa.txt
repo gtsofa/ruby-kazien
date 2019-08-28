@@ -1,0 +1,28 @@
+function function_name
+    pass in num1, num2, num3
+
+    return result
+end function
+
+copy paste the previous pseudo code and change it here
+
+function calculate_gpa
+    pass in  student_grades
+    set grades to student_grades
+    set grade_total to 0
+    for each grade in grades collection
+        if grade is not a 1, 2, 3, or 4
+            print "invalid grade"
+            print grade
+            print "can't complete calculation"
+            stop
+        else add grade to grade_total
+        endif
+    endfor
+    set gpa to grade_total / number of grades
+    return gpa
+end function
+
+set tsofa_grades to 4, 4, 3, 4
+set tsofa_gpa to call calculate_gpa with tsofa_grades
+print tsofa_gpa
