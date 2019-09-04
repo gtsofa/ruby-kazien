@@ -32,8 +32,23 @@ class BankAccount
         "Name: #{name}, Balance: #{sprintf("%0.2f", balance)}"
     end
 
+    def print_register
+        puts "#{name}'s Bank Account"
+
+        puts "-" * 40
+        puts "Description".ljust(30) + "Amount".rjust(10)
+        @transactions.each do |transaction|
+            puts transaction[:description].ljust(30) + sprintf("%0.2f", transaction[:amount]).rjust(10)
+        end
+
+        puts "-" * 40
+        puts "Balance:".ljust(30) + sprintf("%0.2f", balance).rjust(10)
+        puts "-" * 40
+    end
+
 end
 account_name = BankAccount.new("Maestro")
 account_name.credit("Monkey Dance", 100)
 account_name.debit("House Rent", 30)
-puts account_name
+account_name.debit("Gas", 10.51)
+puts account_name.print_register
