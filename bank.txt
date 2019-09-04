@@ -1,0 +1,16 @@
+class Bank
+- account_name
+- account_number*
+- account_branch*
++ deposit(credit)
++ withdrawal(debit)
++ add_transactions
+
+Desired solution.
+#<BankAccount:0x007f00882acbc0 
+  @name="Jason",
+  @transactions=[
+    {:description=>"Beginning Balance", :amount=>0}, 
+    {:description=>"Paycheck", :amount=>100},
+    {:description=>"Groceries", :amount=>-40}
+  ]>     
