@@ -1,0 +1,24 @@
+default: &default
+   adapter: postgresql
+   encoding: unicode
+  
+development:
+   adapter: postgresql
+   encoding: unicode
+   database: library_development
+   username: 
+   password: 
+
+test:
+   adapter: postgresql
+   encoding: unicode
+   database: library_test
+   username: 
+   password: 
+ 
+production:
+   adapter: postgresql
+   encoding: unicode
+   database: library_production
+   username: 
+   password: 
