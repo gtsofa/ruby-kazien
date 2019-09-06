@@ -1,11 +1,13 @@
 require './phone_number'
+require './address'
 
 class Contact
     attr_writer :first_name, :middle_name, :last_name
-    attr_reader :phone_numbers
+    attr_reader :phone_numbers, :addresses
 
     def initialize
         @phone_numbers = []
+        @addresses = []
     end
 
     def add_phone_number(kind, number)
@@ -13,6 +15,18 @@ class Contact
         phone_number.kind = kind
         phone_number.number = number
         phone_numbers.push(phone_number)
+
+    end
+
+    def add_address(kind, street_1, street_2, city, state, postal_code)
+        indrizzio = Address.new
+        indrizzio.kind = kind
+        indrizzio.street_1 = street_1
+        indrizzio.street_2 = street_2
+        indrizzio.city = city
+        indrizzio.state = state
+        indrizzio.postal_code = postal_code
+        addresses.push(indrizzio) #not @ koz it's attr_reader
 
     end
 
@@ -50,7 +64,7 @@ class Contact
         end
         full_name += " "
         full_name += last_name
-        full_name
+        "Full Name:" + full_name
     end
 
     def to_s(format = "full_name")
@@ -76,6 +90,14 @@ class Contact
             puts phone_number
         end
     end
+
+    def print_addresses
+        puts "Addresses..."
+        addresses.each do |address|
+            puts address.to_s('short')
+        end
+
+    end
 end
 
 # testing
@@ -85,10 +107,12 @@ tsofa.last_name = "Nyule"
 tsofa.add_phone_number("Acasa", "123-456-7890")
 tsofa.add_phone_number("Lavoro", "456-7890-888")
 tsofa.add_phone_number("Cellulare", "333-908-765")
+tsofa.add_address("Home", "123 Main St.", "", "Portland", "OR", "12345")
 # puts tsofa.to_s('last_first')
 puts tsofa.to_s('full_name')
 # puts tsofa.inspect
 tsofa.print_phone_numbers
+tsofa.print_addresses
 # puts tsofa.full_name
 # puts tsofa.last_first
 
