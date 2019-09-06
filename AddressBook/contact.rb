@@ -1,5 +1,20 @@
+require './phone_number'
+
 class Contact
     attr_writer :first_name, :middle_name, :last_name
+    attr_reader :phone_numbers
+
+    def initialize
+        @phone_numbers = []
+    end
+
+    def add_phone_number(kind, number)
+        phone_number = PhoneNumber.new
+        phone_number.kind = kind
+        phone_number.number = number
+        phone_numbers.push(phone_number)
+
+    end
 
     def first_name
         @first_name
@@ -54,25 +69,36 @@ class Contact
             last_first
         end
     end
+
+    def print_phone_numbers
+        puts "Phone Numbers"
+        phone_numbers.each do |phone_number|
+            puts phone_number
+        end
+    end
 end
 
 # testing
 tsofa = Contact.new
 tsofa.first_name = "Tsofa"
 tsofa.last_name = "Nyule"
-puts tsofa.to_s
-puts tsofa.to_s('last_first')
+tsofa.add_phone_number("Acasa", "123-456-7890")
+tsofa.add_phone_number("Lavoro", "456-7890-888")
+tsofa.add_phone_number("Cellulare", "333-908-765")
+# puts tsofa.to_s('last_first')
 puts tsofa.to_s('full_name')
+# puts tsofa.inspect
+tsofa.print_phone_numbers
 # puts tsofa.full_name
 # puts tsofa.last_first
 
 
-sarah = Contact.new
-sarah.first_name = "Sarah"
-sarah.middle_name = "Amore"
-sarah.last_name = "Mio"
-puts sarah.to_s
-puts sarah.to_s('last_first')
-puts sarah.to_s('full_name')
+# sarah = Contact.new
+# sarah.first_name = "Sarah"
+# sarah.middle_name = "Amore"
+# sarah.last_name = "Mio"
+# puts sarah.to_s
+# puts sarah.to_s('last_first')
+# puts sarah.to_s('full_name')
 # puts sarah.full_name
 # puts sarah.last_first
