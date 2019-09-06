@@ -6,6 +6,24 @@ class AddressBook
         @contacts = []
     end
 
+    def fint_by_name(name)
+        results = []
+        search = name.downcase
+        contacts.each do |contact|
+            if contact.first_name.downcase.include?(search) ||
+                contact.last_name.downcase.include?(search)
+                results.push(contact)
+            end
+        end
+        puts "Name search results (#{search})"
+        results.each do |result|
+            puts result.to_s('full_name')
+            result.print_phone_numbers
+            result.print_addresses
+        end
+
+    end
+
     def print_contact_list
         puts "Contact List"
         contacts.each do |contact|
@@ -34,4 +52,5 @@ maestro.add_address("Home", "123 Main St.", "", "Portland", "OR", "12345")
 
 address_book.contacts.push(tsofa)
 address_book.contacts.push(maestro)
-address_book.print_contact_list
+# address_book.print_contact_list
+address_book.fint_by_name('n')
