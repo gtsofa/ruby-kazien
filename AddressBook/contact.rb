@@ -101,18 +101,18 @@ class Contact
 end
 
 # testing
-tsofa = Contact.new
-tsofa.first_name = "Tsofa"
-tsofa.last_name = "Nyule"
-tsofa.add_phone_number("Acasa", "123-456-7890")
-tsofa.add_phone_number("Lavoro", "456-7890-888")
-tsofa.add_phone_number("Cellulare", "333-908-765")
-tsofa.add_address("Home", "123 Main St.", "", "Portland", "OR", "12345")
+# tsofa = Contact.new
+# tsofa.first_name = "Tsofa"
+# tsofa.last_name = "Nyule"
+# tsofa.add_phone_number("Acasa", "123-456-7890")
+# tsofa.add_phone_number("Lavoro", "456-7890-888")
+# tsofa.add_phone_number("Cellulare", "333-908-765")
+# tsofa.add_address("Home", "123 Main St.", "", "Portland", "OR", "12345")
 # puts tsofa.to_s('last_first')
-puts tsofa.to_s('full_name')
+# puts tsofa.to_s('full_name')--
 # puts tsofa.inspect
-tsofa.print_phone_numbers
-tsofa.print_addresses
+# tsofa.print_phone_numbers
+# tsofa.print_addresses
 # puts tsofa.full_name
 # puts tsofa.last_first
 
