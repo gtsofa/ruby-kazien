@@ -1,0 +1,23 @@
+---
+- !ruby/object:Contact
+  phone_numbers: []
+  addresses: []
+  first_name: tsofa
+  middle_name: man
+  last_name: nyule
+- !ruby/object:Contact
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    kind: Home
+    number: 234-567-8901
+  addresses:
+  - !ruby/object:Address
+    kind: Work
+    street_1: 333 Free Town
+    street_2: ''
+    city: Nairobi
+    state: NBO
+    postal_code: '80202'
+  first_name: Sarah
+  middle_name: Mines
+  last_name: Tsofa
