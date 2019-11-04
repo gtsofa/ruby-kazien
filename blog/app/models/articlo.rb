@@ -1,0 +1,2 @@
+class Articlo < ApplicationRecord
+end
